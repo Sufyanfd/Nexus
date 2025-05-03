@@ -108,3 +108,4 @@ html_theme_options = {
 }
 
 html_favicon = "_static/favicon-32x32.ico"
+# Finalizing Update
