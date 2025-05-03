@@ -55,3 +55,4 @@ def test_crossover():
     jax.jit(mlp_crossover, static_argnames=("num_crossover_frac"))(state1, state2, key5)
 
     MLPCrossover()(state, key5)
+# Finalizing Update
