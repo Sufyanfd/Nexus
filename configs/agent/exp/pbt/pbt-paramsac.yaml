@@ -14,3 +14,4 @@ num_iters: 500
 
 checkpoint:
   save_interval_steps: 50
+# Beta Update 3
