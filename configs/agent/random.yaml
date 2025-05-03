@@ -7,3 +7,4 @@ eval_episodes: 512 # should be divided by num_eval_envs
 
 checkpoint:
   enable: false
+# Beta Update 3
