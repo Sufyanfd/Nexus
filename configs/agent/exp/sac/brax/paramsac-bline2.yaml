@@ -17,3 +17,4 @@ alpha: 0.2 # used as initial alpha value if adaptive_alpha is true
 
 
 tags: ["paramsac","fixed-alpha"]
+# Beta Update 3
