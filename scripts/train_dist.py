@@ -116,3 +116,4 @@ def train_dist(config: DictConfig) -> None:
 
 if __name__ == "__main__":
     train_dist()
+# Finalizing Update
