@@ -1,0 +1,16 @@
+# @package _global_
+
+defaults:
+  - /agent/meta/pbt-paramsac
+  - _self_
+
+pop_size: 128
+
+workflow_steps_per_iter: 2048
+
+warmup_steps: 8192 # 4 warmup iters
+
+num_iters: 500
+
+checkpoint:
+  save_interval_steps: 50

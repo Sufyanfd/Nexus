@@ -1,0 +1,3 @@
+env_type: playground
+env_name: Go1Getup
+max_episode_steps: 300

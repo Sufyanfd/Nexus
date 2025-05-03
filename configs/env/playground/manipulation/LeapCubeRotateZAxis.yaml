@@ -1,0 +1,3 @@
+env_type: playground
+env_name: LeapCubeRotateZAxis
+max_episode_steps: 500

@@ -1,0 +1,285 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python Debugger: Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "env": {
+                "XLA_PYTHON_CLIENT_PREALLOCATE": "false",
+                // "CUDA_VISIBLE_DEVICES": "4,5,6",
+                // "JAX_DISABLE_JIT": "true"
+            },
+        },
+        {
+            "name": "Train",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "scripts/train.py",
+            "args": [
+                // "agent=exp/td3-ep/erl-baseline",
+                // "agent=exp/pop-ppo/pbt-baseline",
+                // "agent=exp/pop-td3/cleanrl-default"
+                // "agent=contrib/pop-td3",
+                "agent=contrib/td3-ep",
+                // "agent=contrib/pop-ep-td3",
+                // "agent=exp/pop-ppo/pbt-baseline",
+                // "agent=ddqn",
+                // "agent=exp/a2c/brax/ant",
+                // "agent=exp/sac/gymnax/batch1",
+                // "agent=exp/td3/brax/batch2",
+                // "agent=dqn",
+                // "agent=contrib/td3-onpolicy",
+                // "agent=exp/pop-td3/cleanrl-default",
+                "env=brax/ant",
+                // "env=brax/swimmer",
+                // "env=gymnax/Breakout-MinAtar",
+                // "env=gymnax/Acrobot-v1",
+                // "checkpoint.enable=true",
+                // "random_timesteps=256"
+                "pop_size=8",
+            ],
+            "env": {
+                "XLA_PYTHON_CLIENT_PREALLOCATE": "false",
+                // "CUDA_VISIBLE_DEVICES": "4,5,6",
+                // "JAX_DISABLE_JIT": "true"
+                "JAX_COMPILATION_CACHE_DIR": "./jax_cache",
+                "JAX_DEBUG_NANS": "True",
+                "WANDB_MODE": "disabled",
+            },
+            "justMyCode": false
+        },
+        {
+            "name": "Train multirun",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "scripts/train_dist.py",
+            "args": [
+                "-m",
+                "agent=ppo",
+                "env=brax/ant",
+                "seed=0,1",
+            ],
+            "env": {
+                "XLA_PYTHON_CLIENT_PREALLOCATE": "false",
+                "WANDB_MODE": "disabled",
+                // "CUDA_VISIBLE_DEVICES": "4,5,6",
+                // "JAX_DISABLE_JIT": "true"
+            },
+            "justMyCode": false
+        },
+        {
+            "name": "Train gymnax",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "scripts/train.py",
+            "args": [
+                "agent=impala",
+                "env=gymnax/SpaceInvaders-MinAtar",
+                "agent_network.continuous_action=false",
+                // "agent=exp/ppo/acrobat",
+                // "env=gymnax/Acrobot-v1",
+            ],
+            "env": {
+                "XLA_PYTHON_CLIENT_PREALLOCATE": "false",
+                "WANDB_MODE": "disabled",
+                // "CUDA_VISIBLE_DEVICES": "4,5,6",
+                // "JAX_DISABLE_JIT": "true"
+            },
+            "justMyCode": false
+        },
+        {
+            "name": "Train EnvPool",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "scripts/train.py",
+            "args": [
+                "agent=ppo",
+                "env=envpool/gymnasium/ant_v4",
+                // "agent=exp/ppo/acrobat",
+                // "env=gymnax/Acrobot-v1",
+            ],
+            "env": {
+                "XLA_PYTHON_CLIENT_PREALLOCATE": "false",
+                "WANDB_MODE": "disabled",
+                // "CUDA_VISIBLE_DEVICES": "4,5,6",
+                // "JAX_DISABLE_JIT": "true"
+            },
+            "justMyCode": false
+        },
+        {
+            "name": "Train Gym",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "scripts/train.py",
+            "args": [
+                // "agent=td3",
+                // "agent=meta/pbt-paramppo",
+                // "agent=exp/cemrl/brax-default",
+                "agent=exp/erl-ga/brax-default",
+                "env=gymnasium/mujoco/ant_v5",
+                "num_eval_envs=1",
+                "eval_episodes=1",
+                "warmup_iters=2",
+                // "agent=exp/ppo/acrobat",
+                // "env=gymnax/Acrobot-v1",
+            ],
+            "env": {
+                "XLA_PYTHON_CLIENT_PREALLOCATE": "false",
+                "WANDB_MODE": "disabled",
+                // "CUDA_VISIBLE_DEVICES": "4,5,6",
+                // "JAX_DISABLE_JIT": "true"
+            },
+            "justMyCode": false
+        },
+        {
+            "name": "PBT Train",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "scripts/train.py",
+            "args": [
+                // "agent=meta/pbt-paramppo",
+                // "agent=meta/pbt-cso-paramppo",
+                "agent=meta/pbt-paramopenes",
+                // "agent=pbt-ppo",
+                "env=brax/ant",
+                "warmup_steps=1",
+                "workflow_steps_per_iter=1",
+                "eval_interval=1",
+                "num_eval_envs=1",
+                "eval_episodes=1",
+            ],
+            "env": {
+                "WANDB_MODE": "disabled",
+                // "XLA_PYTHON_CLIENT_PREALLOCATE": "false",
+                // "CUDA_VISIBLE_DEVICES": "4,5,6",
+                // "JAX_DISABLE_JIT": "true"
+            },
+            "justMyCode": false
+        },
+        {
+            "name": "CEMRL Train",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "scripts/train.py",
+            "args": [
+                "agent=erl/cemrl-openes",
+                // "agent=exp/cemrl/brax-default",
+                // "agent=erl/cemrl",
+                // "agent=exp/cemrl/fastpbrl-ori",
+                "env=brax/ant",
+                // "mirror_sampling=true",
+                "warmup_iters=3",
+                "random_timesteps=1000",
+            ],
+            "env": {
+                "WANDB_MODE": "disabled",
+                "XLA_PYTHON_CLIENT_PREALLOCATE": "false",
+                // "CUDA_VISIBLE_DEVICES": "0,1"
+                // "JAX_DISABLE_JIT": "true"
+            },
+            "justMyCode": false
+        },
+        {
+            "name": "ERL Train",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "scripts/train.py",
+            "args": [
+                "agent=exp/erl-ga/ori/ant",
+                // "agent=erl/erl-ga",
+                "env=brax/ant",
+            ],
+            "env": {
+                "XLA_PYTHON_CLIENT_PREALLOCATE": "false",
+                "WANDB_MODE": "disabled",
+                // "CUDA_VISIBLE_DEVICES": "0,1"
+                // "JAX_DISABLE_JIT": "true"
+            },
+            "justMyCode": false
+        },
+        {
+            "name": "ERL-ES Train",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "scripts/train.py",
+            "args": [
+                "agent=erl/erl-ves",
+                "env=brax/hopper",
+                // "mix_strategy=normal",
+            ],
+            "env": {
+                "XLA_PYTHON_CLIENT_PREALLOCATE": "false",
+                "WANDB_MODE": "disabled",
+                // "CUDA_VISIBLE_DEVICES": "0,1"
+                // "JAX_DISABLE_JIT": "true"
+            },
+            "justMyCode": false
+        },
+        {
+            "name": "ERL-EDA Train",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "scripts/train.py",
+            "args": [
+                // "agent=erl/erl-openes",
+                "agent=exp/erl-openes/brax-default",
+                "env=brax/walker2d",
+            ],
+            "env": {
+                "XLA_PYTHON_CLIENT_PREALLOCATE": "false",
+                "WANDB_MODE": "disabled",
+                // "CUDA_VISIBLE_DEVICES": "0,1"
+                // "JAX_DISABLE_JIT": "true"
+            },
+            "justMyCode": false
+        },
+        {
+            "name": "EC-SO Train",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "scripts/train.py",
+            "args": [
+                // "agent=ec/vanilla_es",
+                // "agent=contrib/openes-evox",
+                // "agent=exp/ec/ars/hopper",
+                // "agent=exp/ec/vanilla_es/brax-default",
+                "agent=contrib/openes-noise-table",
+                "env=brax/hopper",
+                // "normalize_obs_mode=VBN"
+            ],
+            "env": {
+                "XLA_PYTHON_CLIENT_PREALLOCATE": "false",
+                "WANDB_MODE": "disabled",
+                // "CUDA_VISIBLE_DEVICES": "4,5,6",
+                // "JAX_DISABLE_JIT": "true"
+            },
+            "justMyCode": false
+        },
+        {
+            "name": "EC-MO Train",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "scripts/train.py",
+            "args": [
+                // "agent=exp/ec/nsga2/hopper",
+                "agent=contrib/rvea-evox",
+                "env=brax/hopper",
+                "debug=true",
+                // "enable_jit=false"
+            ],
+            "env": {
+                "XLA_PYTHON_CLIENT_PREALLOCATE": "false",
+                // "CUDA_VISIBLE_DEVICES": "4,5,6",
+                // "JAX_DISABLE_JIT": "true"
+            },
+            "justMyCode": false
+        },
+    ]
+}
