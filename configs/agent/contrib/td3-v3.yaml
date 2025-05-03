@@ -38,3 +38,4 @@ save_replay_buffer: true
 
 checkpoint:
   save_interval_steps: 163840
+# Beta Update 3
