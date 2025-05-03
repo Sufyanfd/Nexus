@@ -202,3 +202,4 @@ def decentralized_rollout_with_shared_model(
     )
 
     return env_state, trajectory
+# Finalizing Update
