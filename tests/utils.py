@@ -121,3 +121,4 @@ class DebugRandomAgent(Agent):
         self, agent_state: AgentState, sample_batch: SampleBatch, key: chex.PRNGKey
     ) -> tuple[Action, PolicyExtraInfo]:
         return self.compute_actions(agent_state, sample_batch, key)
+# Finalizing Update
