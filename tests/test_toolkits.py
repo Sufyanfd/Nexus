@@ -75,3 +75,4 @@ def test_discount_return_with_dones():
     discount_return = compute_discount_return(rewards, dones, discount)
     discount_return_real = _real_discount_return(rewards, discount, term_steps)
     chex.assert_trees_all_close(discount_return, discount_return_real)
+# Finalizing Update
