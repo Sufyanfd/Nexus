@@ -37,3 +37,4 @@ def pytest_configure(config):
         print("Turn off jax GPU preallocation!")
         disable_gpu_preallocation()
         enable_deterministic_mode()
+# Finalizing Update
