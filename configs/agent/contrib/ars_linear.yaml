@@ -28,3 +28,4 @@ agent_network:
   actor_hidden_layer_sizes: []
   use_bias: false
   norm_layer_type: "none"
+# Beta Update 3
