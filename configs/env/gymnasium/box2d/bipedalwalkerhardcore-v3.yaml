@@ -1,3 +1,4 @@
 env_type: gymnasium
 env_name: BipedalWalkerHardcore-v3
 max_episode_steps: 2000
+# Beta Update 3
