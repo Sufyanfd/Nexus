@@ -27,3 +27,4 @@ agent_network:
   num_critics: 2
   critic_hidden_layer_sizes: [256, 256]
   actor_hidden_layer_sizes: [256, 256]
+# Beta Update 3
