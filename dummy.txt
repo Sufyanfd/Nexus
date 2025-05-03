@@ -23,3 +23,4 @@ update1.22
 update1.23
 update1.24
 update1.25
+update1.26
