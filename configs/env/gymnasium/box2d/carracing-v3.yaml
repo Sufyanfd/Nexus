@@ -1,3 +1,4 @@
 env_type: gymnasium
 env_name: CarRacing-v3
 max_episode_steps: 1000
+# Beta Update 3
