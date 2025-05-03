@@ -1,3 +1,4 @@
 env_type: gymnasium
 env_name: Acrobot-v1
 max_episode_steps: 500
+# Beta Update 3
