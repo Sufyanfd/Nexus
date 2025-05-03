@@ -225,3 +225,4 @@ def test_sparse_reward_wrapper2():
 
     for r in trajectory.rewards[term_idx:].reshape(-1):
         assert jnp.allclose(last_reward, r)
+# Finalizing Update
