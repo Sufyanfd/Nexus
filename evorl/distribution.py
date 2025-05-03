@@ -110,3 +110,4 @@ class TanhTransformedDistribution(tfd.TransformedDistribution):
         td_properties = super()._parameter_properties(dtype, num_classes=num_classes)
         del td_properties["bijector"]
         return td_properties
+# Finalizing Update
