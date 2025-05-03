@@ -58,3 +58,4 @@ def test_has_brax_wrapper():
     )
     assert has_wrapper(env, OneEpisodeWrapper)
     assert has_wrapper(env, VmapWrapper)
+# Finalizing Update
