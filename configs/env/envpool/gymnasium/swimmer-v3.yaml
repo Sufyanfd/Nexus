@@ -2,3 +2,4 @@ env_name: Swimmer-v3
 env_type: envpool
 env_backend: gymnasium
 max_episode_steps: 1000
+# Beta Update 3
