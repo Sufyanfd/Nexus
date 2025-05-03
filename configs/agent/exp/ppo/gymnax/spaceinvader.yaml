@@ -27,3 +27,4 @@ optimizer:
 
 agent_network:
   continuous_action: false
+# Beta Update 3
