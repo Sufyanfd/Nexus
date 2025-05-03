@@ -247,3 +247,4 @@ If you use Nexus in your research and want to cite it in your work, please use:
   year      = {2025}
 }
 ```
+# Beta Update 3
