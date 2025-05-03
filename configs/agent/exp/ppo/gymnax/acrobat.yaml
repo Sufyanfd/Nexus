@@ -22,3 +22,4 @@ agent_network:
   continuous_action: false
   actor_hidden_layer_sizes: [64, 64]
   critic_hidden_layer_sizes: [64, 64]
+# Beta Update 3
