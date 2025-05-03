@@ -19,3 +19,4 @@ loss_weights:
 num_eval_envs: 128
 eval_episodes: 128 # should be divided by num_eval_envs
 eval_interval: 5
+# Beta Update 3
