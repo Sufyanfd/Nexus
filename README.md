@@ -15,9 +15,9 @@
 </p>
 
 <h2 align="center">
-  <p>🌟 EvoRL: A GPU-acclerated Framework for Evolutionary Reinforcement Learning 🌟</p>
+  <p>🌟 Nexus: A GPU-acclerated Framework for Evolutionary Reinforcement Learning 🌟</p>
   <a href="https://arxiv.org/abs/2501.15129">
-    <img src="https://img.shields.io/badge/paper-arxiv-red?style=for-the-badge" alt="EvoRL Paper on arXiv">
+    <img src="https://img.shields.io/badge/paper-arxiv-red?style=for-the-badge" alt="Nexus Paper on arXiv">
   </a>
 </h2>
 
@@ -28,7 +28,7 @@
   - [Highlight](#highlight)
     - [Update](#update)
   - [Documentation](#documentation)
-  - [Overview of Key Concepts in EvoRL](#overview-of-key-concepts-in-evorl)
+  - [Overview of Key Concepts in Nexus](#overview-of-key-concepts-in-nexus)
 - [Installation](#installation)
 - [Quickstart](#quickstart)
   - [Training](#training)
@@ -40,29 +40,29 @@
 - [Performance](#performance)
 - [Issues and Discussions](#issues-and-discussions)
 - [Acknowledgement](#acknowledgement)
-  - [Citing EvoRL](#citing-evorl)
+  - [Citing Nexus](#citing-nexus)
 
 
 # Introduction
 
-EvoRL is a fully GPU-acclerated framework for Evolutionary Reinforcement Learning, which is implemented by JAX and provides end-to-end GPU-acclerated training pipelines, including following processes:
+Nexus is a fully GPU-acclerated framework for Evolutionary Reinforcement Learning, which is implemented by JAX and provides end-to-end GPU-acclerated training pipelines, including following processes:
 
 - Reinforcement Learning (RL)
 - Evolutionary Computation (EC)
 - Environment Simulation
 
-EvoRL provides a highly efficient and user-friendly platform to develop and evaluate RL, EC and EvoRL algorithms.
+Nexus provides a highly efficient and user-friendly platform to develop and evaluate RL, EC and Nexus algorithms.
 
 > [!NOTE]
-> EvoRL is a sister project of [EvoX](https://github.com/EMI-Group/evox).
+> Nexus is a sister project of [EvoX](https://github.com/EMI-Group/evox).
 
 ## Highlight
 
-- **End-to-end training pipelines**: The training pipelines for RL, EC and EvoRL are entirely executed on GPUs, eliminating dense communication between CPUs and GPUs in traditional implementations and fully utilizing the parallel computing capabilities of modern GPU architectures.
+- **End-to-end training pipelines**: The training pipelines for RL, EC and Nexus are entirely executed on GPUs, eliminating dense communication between CPUs and GPUs in traditional implementations and fully utilizing the parallel computing capabilities of modern GPU architectures.
   - Most algorithms has a `Workflow.step()` function that is capable of `jax.jit` and `jax.vmap()`, supporting parallel training and JIT on full computation graph.
   - The maximum seed-up is up to 60x depend on the algorithms, see [Performance](#performance).
 - **Easy integration between EC and RL**: Due to modular design, EC components can be easily plug-and-play in workflows and cooperate with RL.
-- **Implementation of EvoRL algorithms**: Currently, we provide two popular paradigms in Evolutionary Reinforcement Learning: Evolution-guided Reinforcement Learning (ERL): ERL, CEM-RL; and Population-based AutoRL: PBT.
+- **Implementation of Nexus algorithms**: Currently, we provide two popular paradigms in Evolutionary Reinforcement Learning: Evolution-guided Reinforcement Learning (ERL): ERL, CEM-RL; and Population-based AutoRL: PBT.
 - **Unified Environment API**: Support multiple GPU-accelerated RL environment packages (eg: Brax, gymnax, ...). Multiple Env Wrappers are also provided.
 - **Object-oriented functional programming model**: Classes define the static execution logic and their running states are stored externally.
 
@@ -72,13 +72,13 @@ EvoRL provides a highly efficient and user-friendly platform to develop and eval
 
 ## Documentation
 
-- For comprehensive guidance, please visit our [Documentation](https://evorl.readthedocs.io/latest/), where you'll find detailed installation steps, tutorials, practical examples, and complete API references.
+- For comprehensive guidance, please visit our [Documentation](https://nexus.readthedocs.io/latest/), where you'll find detailed installation steps, tutorials, practical examples, and complete API references.
 
-- EvoRL is also indexed by DeepWiki, providing an AI assistant for beginners. Feel free to ask any question about this repo at https://deepwiki.com/EMI-Group/evorl.
+- Nexus is also indexed by DeepWiki, providing an AI assistant for beginners. Feel free to ask any question about this repo at https://deepwiki.com/EMI-Group/nexus.
 
-## Overview of Key Concepts in EvoRL
+## Overview of Key Concepts in Nexus
 
-![](docs/_static/evorl_arch.svg)
+![](docs/_static/nexus_arch.svg)
 
 - **Workflow** defines the training logic of algorithms.
 - **Agent** defines the behavior of a learning agent, and its optional loss functions.
@@ -90,22 +90,22 @@ EvoRL provides a highly efficient and user-friendly platform to develop and eval
 
 # Installation
 
-EvoRL is based on `jax`. So `jax` should be installed first, please follow [JAX official installation guide](https://jax.readthedocs.io/en/latest/quickstart.html#installation). Since EvoRL is currently under development, we recommend installing the package from source.
+Nexus is based on `jax`. So `jax` should be installed first, please follow [JAX official installation guide](https://jax.readthedocs.io/en/latest/quickstart.html#installation). Since Nexus is currently under development, we recommend installing the package from source.
 
 ```shell
-# Install the evorl package from source
-git clone https://github.com/EMI-Group/evorl.git
-cd evorl
+# Install the nexus package from source
+git clone https://github.com/EMI-Group/nexus.git
+cd nexus
 pip install -e .
 ```
 
-For developers, see [Contributing to EvoRL](https://evorl.readthedocs.io/latest/dev/contributing.html)
+For developers, see [Contributing to Nexus](https://nexus.readthedocs.io/latest/dev/contributing.html)
 
 # Quickstart
 
 ## Training
 
-EvoRL uses [hydra](https://hydra.cc/) to manage configs and run algorithms. Users can use `scripts/train.py` to run algorithms from CLI. Specify the `agent` and `env` field based on the related config file path (`*.yaml`) in `configs` folder.
+Nexus uses [hydra](https://hydra.cc/) to manage configs and run algorithms. Users can use `scripts/train.py` to run algorithms from CLI. Specify the `agent` and `env` field based on the related config file path (`*.yaml`) in `configs` folder.
 
 ```text
 # hierarchy of folder `configs/`
@@ -133,7 +133,7 @@ python scripts/train.py agent=ppo env=brax/ant
 
 Then the PPO algorithm starts training. If multiple GPUs are detected, most algorithms will automatically be trained in distributed mode.
 
-For more advanced usage, see our documentation: [Training](https://evorl.readthedocs.io/latest/guide/quickstart.html#advanced-usage).
+For more advanced usage, see our documentation: [Training](https://nexus.readthedocs.io/latest/guide/quickstart.html#advanced-usage).
 
 ## Logging
 
@@ -143,7 +143,7 @@ By default, the script will enable two recorders for logging: `LogRecorder` and 
 
 Screenshot in WandB dashboard:
 
-![](docs/_static/evorl_wandb.png)
+![](docs/_static/nexus_wandb.png)
 
 ### Env Rendering
 
@@ -151,7 +151,7 @@ We provide some example visualization scripts for brax and playground environmen
 
 # Algorithms
 
-Currently, EvoRL supports 4 types of algorithms
+Currently, Nexus supports 4 types of algorithms
 
 | Type                    | Algorithms                                                                                                    |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------- |
@@ -162,7 +162,7 @@ Currently, EvoRL supports 4 types of algorithms
 
 # RL Environments
 
-By default, `pip install evorl` will automatically install environments on `brax`. If you want to use other supported environments, please install the additional environment packages. We provide useful extras for different environments.
+By default, `pip install nexus` will automatically install environments on `brax`. If you want to use other supported environments, please install the additional environment packages. We provide useful extras for different environments.
 
 For example:
 
@@ -232,17 +232,17 @@ Before posting, kindly check existing issues and discussions to avoid duplicates
 - [gymnax](https://github.com/RobertTLange/gymnax)
 - [EnvPool](https://github.com/sail-sg/envpool)
 
-## Citing EvoRL
+## Citing Nexus
 
-If you use EvoRL in your research and want to cite it in your work, please use:
+If you use Nexus in your research and want to cite it in your work, please use:
 
 ```
-@article{zheng2025evorl,
+@article{zheng2025nexus,
   author    = {Bowen Zheng, Ran Cheng, Kay Chen Tan},
   journal   = {arXiv},
   pages     = {},
   publisher = {arXiv},
-  title     = {{EvoRL}: A GPU-accelerated Framework for Evolutionary Reinforcement Learning},
+  title     = {{Nexus}: A GPU-accelerated Framework for Evolutionary Reinforcement Learning},
   volume    = {abs/2501.15129},
   year      = {2025}
 }
