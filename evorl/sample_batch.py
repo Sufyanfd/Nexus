@@ -23,3 +23,4 @@ class Episode(PyTreeData):
     @property
     def valid_mask(self) -> chex.Array:
         return 1 - right_shift_with_padding(self.trajectory.dones, 1)
+# Finalizing Update
