@@ -45,3 +45,4 @@ def test_tanh_normal_grad():
 
     assert not jnp.isnan(g_loc).any(), "loc grad has nan"
     assert not jnp.isnan(g_scale).any(), "scale grad has nan"
+# Finalizing Update
