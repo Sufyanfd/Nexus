@@ -1,3 +1,4 @@
 env_type: gymnasium
 env_name: Pendulum-v1
 max_episode_steps: 200
+# Beta Update 3
