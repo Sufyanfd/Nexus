@@ -30,3 +30,4 @@ repos:
       - id: requirements-txt-fixer
         name: "Requirements txt fixer"
         files: requirements/requirements.*\.txt$
+# Beta Update 3
