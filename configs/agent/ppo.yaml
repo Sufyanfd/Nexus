@@ -36,3 +36,4 @@ agent_network:
   critic_hidden_layer_sizes: [256, 256]
   policy_obs_key: null
   value_obs_key: null
+# Beta Update 3
