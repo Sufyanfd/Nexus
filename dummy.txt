@@ -9,3 +9,4 @@ update1.8
 update1.9
 update1.10
 update1.11
+update1.12
