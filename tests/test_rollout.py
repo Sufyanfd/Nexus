@@ -142,3 +142,4 @@ def test_envpool_autoreset():
     autoreset = trajectory.extras.env_extras.autoreset
 
     assert jnp.array_equal(shift_dones, autoreset)
+# Finalizing Update
