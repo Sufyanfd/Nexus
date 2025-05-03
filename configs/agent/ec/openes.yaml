@@ -35,3 +35,4 @@ agent_network:
   use_bias: true
   norm_layer_type: "none"
   policy_obs_key: ""
+# Beta Update 3
