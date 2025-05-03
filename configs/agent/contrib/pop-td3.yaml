@@ -7,3 +7,4 @@ defaults:
 workflow_cls: evorl.algorithms.contrib.pop_td3.PopTD3Workflow
 
 pop_size: 16
+# Beta Update 3
