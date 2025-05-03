@@ -32,3 +32,4 @@ def test_ec_workflow_learn():
     key = jax.random.PRNGKey(42)
     state = workflow.init(key)
     state = workflow.learn(state)
+# Finalizing Update
