@@ -32,3 +32,4 @@ checkpoint:
   save_interval_steps: 2560
 
 tags: ["batch-brax"]
+# Beta Update 3
