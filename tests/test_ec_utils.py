@@ -30,3 +30,4 @@ def test_ParamVectorSpec():
 
     batch_recover = param_spec.to_tree(batch_flat)
     chex.assert_trees_all_close(batch_params, batch_recover)
+# Finalizing Update
