@@ -77,3 +77,4 @@ def train(config: DictConfig) -> None:
 
 if __name__ == "__main__":
     train()
+# Finalizing Update
